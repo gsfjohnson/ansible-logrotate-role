@@ -1,0 +1,8 @@
+---
+
+logrotate_pkg_name: logrotate
+logrotate_pkg_state: installed
+
+logrotate_d: []
+
+logrotate_indent_char: "  "

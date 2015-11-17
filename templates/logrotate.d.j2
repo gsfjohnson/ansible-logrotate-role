@@ -1,0 +1,26 @@
+# Managed by Ansible; do not modify by hand
+
+{% if item.sections is defined %}
+{% for section in item.sections %}
+{% if section.comments is defined %}
+{% for comment in section.comments %}
+# {{ comment }}
+{% endfor %}
+{% endif %}
+{% if section._disabled is defined and section._disabled %}#{% endif %}{{ section.path }} {
+{% if section.options is defined %}
+{% for option in section.options %}
+{% if section._disabled is defined and section._disabled %}#{% endif %}{{logrotate_indent_char}}{{ option }}
+{% endfor %}
+{% endif %}
+{% if section.scripts is defined %}
+{% for name, script in section.scripts.iteritems() %}
+{% if section._disabled is defined and section._disabled %}#{% endif %}{{logrotate_indent_char}}{{ name }}
+{% if section._disabled is defined and section._disabled %}#{% endif %}{{logrotate_indent_char}}{{logrotate_indent_char}}{{ script }}
+{% if section._disabled is defined and section._disabled %}#{% endif %}{{logrotate_indent_char}}endscript
+{% endfor %}
+{% endif %}
+{% if section._disabled is defined and section._disabled %}#{% endif %}}
+
+{% endfor %}
+{% endif %}

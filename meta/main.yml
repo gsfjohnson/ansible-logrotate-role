@@ -1,0 +1,13 @@
+---
+galaxy_info:
+  author: gsfjohnson
+  description: Logrotate ansible role
+  license: BSD
+  min_ansible_version: 1.5
+  platforms:
+  - name: EL
+    versions:
+    - 6
+  categories:
+  - system
+dependencies: []

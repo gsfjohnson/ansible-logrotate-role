@@ -1,0 +1,6 @@
+---
+
+- name: install pkg
+  yum:
+    pkg={{logrotate_pkg_name}}
+    state={{logrotate_pkg_state}}
